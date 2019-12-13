@@ -10,7 +10,6 @@ import TeamsView from '../teams';
 import ErrorAlert from '../errorAlert';
 
 interface State {
-    error: string,
     gameName: string
     gameData: any,
     dataLoading: boolean
@@ -21,7 +20,6 @@ class App extends React.Component<any, State> {
         super(props);
 
         this.state = {
-            error: '',
             gameName: '',
             gameData: [],
             dataLoading: false,
@@ -38,7 +36,7 @@ class App extends React.Component<any, State> {
 
                 this.setState({gameName: campaign_name, gameData: team_instances});
             } catch (e) {
-                this.setState({error: e.toString()});
+                console.log(e.toString());
             } finally {
                 this.setState({dataLoading: false});
             }
@@ -48,7 +46,7 @@ class App extends React.Component<any, State> {
     }
 
     render() {
-        const {error, gameData, gameName, dataLoading} = this.state;
+        const {gameData, gameName, dataLoading} = this.state;
 
         return (
             <div className="wrapper bg-light">
@@ -58,16 +56,18 @@ class App extends React.Component<any, State> {
                             Scenario Visualization&nbsp;
                             {
                                 dataLoading &&
-                                <div className="spinner-border text-success" role="status">
-                                    <span className="sr-only">Loading...</span>
-                                </div>
+								<div className="spinner-border text-dark"
+									 style={{fontSize: '1rem'}} role="status">
+									<span className="sr-only">Loading...</span>
+								</div>
                             }
                         </h1>
                         <h3 className='mt-5'>{gameName}</h3>
                     </header>
-                    {error || gameData.length === 0
-                        ? <ErrorAlert message={error.toString()}/>
-                        : <TeamsView teamsData={gameData}/>
+
+                    {gameData.length !== 0
+                        ? <TeamsView teamsData={gameData}/>
+                        : !dataLoading && <ErrorAlert message={'No data received'}/>
                     }
                 </div>
             </div>
