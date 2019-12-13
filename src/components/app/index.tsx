@@ -13,6 +13,7 @@ interface State {
     error: string,
     gameName: string
     gameData: any,
+    dataLoading: boolean
 }
 
 class App extends React.Component<any, State> {
@@ -22,12 +23,15 @@ class App extends React.Component<any, State> {
         this.state = {
             error: '',
             gameName: '',
-            gameData: []
+            gameData: [],
+            dataLoading: false,
         }
     }
 
     componentDidMount() {
         const callApi = async () => {
+            this.setState({dataLoading: true});
+
             try {
                 const response = await axios.get(REQUEST_DATA.URL);
                 const {campaign_name, team_instances} = response.data;
@@ -35,6 +39,8 @@ class App extends React.Component<any, State> {
                 this.setState({gameName: campaign_name, gameData: team_instances});
             } catch (e) {
                 this.setState({error: e.toString()});
+            } finally {
+                this.setState({dataLoading: false});
             }
         };
 
@@ -42,15 +48,23 @@ class App extends React.Component<any, State> {
     }
 
     render() {
-        const {error, gameData, gameName} = this.state;
+        const {error, gameData, gameName, dataLoading} = this.state;
+
         return (
             <div className="wrapper bg-light">
                 <div className="container vh-100 pt-3 pb-5">
                     <header>
-                        <h1>Scenario Visualization</h1>
+                        <h1>
+                            Scenario Visualization&nbsp;
+                            {
+                                dataLoading &&
+                                <div className="spinner-border text-success" role="status">
+                                    <span className="sr-only">Loading...</span>
+                                </div>
+                            }
+                        </h1>
                         <h3 className='mt-5'>{gameName}</h3>
                     </header>
-
                     {error || gameData.length === 0
                         ? <ErrorAlert message={error.toString()}/>
                         : <TeamsView teamsData={gameData}/>

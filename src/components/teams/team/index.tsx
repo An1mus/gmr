@@ -1,6 +1,7 @@
 import React from "react";
 
 import Stage from './stage';
+import ErrorAlert from '../../errorAlert';
 
 interface Props {
     data: any,
@@ -16,7 +17,10 @@ const Team: React.FC<Props> = ({data}) => {
                     <h4 className='mb-3'>{team_name}</h4>
 
                     <div className='d-flex flex-wrap'>
-                        {steps.map((step: any) => <Stage key={step.step_id} data={step}/>)}
+                        {steps.length > 0
+                            ? steps.map((step: any) => <Stage key={step.step_id} data={step}/>)
+                            : <ErrorAlert message='No Steps found'/>
+                        }
                     </div>
 				</div>
 			</div>

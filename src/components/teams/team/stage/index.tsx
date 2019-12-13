@@ -10,9 +10,9 @@ const Stage: React.FC<Props> = ({data}) => {
     const colors: any = {done: '#C7FFF7', in_progress: '#FFFCD4', not_started: '#EFEFEF'};
     const {status, step_name} = data;
     return (
-        <div className={'step'} style={{backgroundColor:  colors[status] || ''}}>
+        <div className={'step'} style={{backgroundColor: colors[status] || ''}}>
             <div>
-                <p>{step_name}</p>
+                {step_name && <p>{step_name}</p>}
             </div>
         </div>
     );
