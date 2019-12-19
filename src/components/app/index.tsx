@@ -1,14 +1,21 @@
 import React from 'react';
+import { Router } from 'react-router';
 
 import './app.css';
 
-class App extends React.Component {
+import Routes from '../routes';
 
+import history from '../../common/';
+
+class App extends React.Component {
     render() {
         return (
-            <div>
-                Clean app
-            </div>
+            <>
+                <h1>App is running</h1>
+                <Router history={history}>
+                    <Routes/>
+                </Router>
+            </>
         );
     }
 };
