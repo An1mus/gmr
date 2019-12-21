@@ -8,6 +8,7 @@ const Routes = () => {
         <>
             <Switch>
                 <Route exact path={'/'} component={Games}/>
+                <Route exact path={'/games'} component={Games}/>
             </Switch>
         </>
     );
