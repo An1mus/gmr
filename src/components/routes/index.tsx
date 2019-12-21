@@ -1,11 +1,13 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
+import Games from '../games';
+
 const Routes = () => {
     return (
         <>
             <Switch>
-                <Route />
+                <Route exact path={'/'} component={Games}/>
             </Switch>
         </>
     );
