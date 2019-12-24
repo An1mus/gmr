@@ -2,10 +2,6 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Game from './container';
-
-import TicTacToe from './implementations/tictactoe';
-
 const Games = () => {
     const links = [
         {
