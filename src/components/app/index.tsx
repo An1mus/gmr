@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from 'react-router';
+import { HashRouter } from 'react-router-dom';
 
 import './app.css';
 
@@ -12,9 +12,9 @@ class App extends React.Component {
         return (
             <>
                 <h1>App is running</h1>
-                <Router history={history}>
+                <HashRouter>
                     <Routes/>
-                </Router>
+                </HashRouter>
             </>
         );
     }
