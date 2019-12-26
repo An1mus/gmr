@@ -12,7 +12,14 @@ const TYPES = {
 
 const TicTacToe = () => {
     const emptyCell = {type: TYPES.EMPTY};
-    const winPatterns: string[] = ['xxx......', '...xxx...', '.......xxx'];
+    const winPatterns: string[] = [
+        'xxx......', '...xxx...', '.......xxx',
+        'x..x..x..', '.x..x..x.', '..x..x..x',
+        'x...x...x', '..x..x..x', 'ooo......',
+        '...ooo...', '.......ooo', 'o..o..o..',
+        '.o..o..o.', '..o..o..o', 'o...o...o',
+        '..o..o..o'
+    ];
 
     let [field, setField] = useState(new Array(9).fill(emptyCell));
     let [isFinished, setFinished] = useState(false);
