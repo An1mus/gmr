@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import './index.css';
+import './styles/index.css';
 
-import Cell from './cell';
+import Cell from './components/cell';
 
 const TYPES = {
     EMPTY: ' ',
