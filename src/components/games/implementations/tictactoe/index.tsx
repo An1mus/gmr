@@ -10,6 +10,13 @@ const TYPES = {
     CIRCLE: 'o',
 };
 
+const GAME_STATES = {
+    PLAYING: 'PLAYING',
+    EVEN: 'EVEN',
+    CIRCLES_WON: 'CIRCLES_WON',
+    CROSS_WON: 'CROSS_WON',
+};
+
 const TicTacToe = () => {
     const emptyCell = {type: TYPES.EMPTY};
     const winPatterns: string[] = [
@@ -22,10 +29,12 @@ const TicTacToe = () => {
     ];
 
     let [field, setField] = useState(new Array(9).fill(emptyCell));
-    let [isFinished, setFinished] = useState(false);
+    let [gameState, setGameState] = useState(GAME_STATES.PLAYING);
     let [stepType, setStepType] = useState(TYPES.CROSS);
 
     const turnClick = (index: number): void => {
+        if(gameState !== GAME_STATES.PLAYING) return ;
+
         setField([...field.map((el, i) => {
             if (i === index && el.type === TYPES.EMPTY) {
                 return {type: stepType}
@@ -39,14 +48,13 @@ const TicTacToe = () => {
     useEffect(() => {
         const reducedState = field.reduce((p, el) => p + el.type, '');
 
-        setFinished(!!winPatterns.find(el => {
-            return (new RegExp(el)).test(reducedState);
-        }));
+        // TODO: add checking
+        setGameState(GAME_STATES.PLAYING);
     }, [field]);
 
     return (
         <>
-            {isFinished && 'Game finished, someone won'}
+            {gameState !== GAME_STATES.PLAYING && 'Game finished, someone won'}
             <div className={'field'}>
                 {field.map((cell, i) => {
                     return <Cell
