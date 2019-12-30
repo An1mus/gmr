@@ -7,24 +7,11 @@ import Cell from './components/cell';
 import GameResult from './components/result';
 
 const TicTacToe = () => {
-    const emptyCell = {type: CELL_TYPES.EMPTY};
+    const emptyField = new Array(9).fill({type: CELL_TYPES.EMPTY});
 
-    let [field, setField] = useState(new Array(9).fill(emptyCell));
+    let [field, setField] = useState(emptyField);
     let [gameState, setGameState] = useState(GAME_STATES.PLAYING);
     let [stepType, setStepType] = useState(CELL_TYPES.CROSS);
-
-    const turnClick = (index: number): void => {
-        if (gameState !== GAME_STATES.PLAYING) return;
-
-        setField([...field.map((el, i) => {
-            if (i === index && el.type === CELL_TYPES.EMPTY) {
-                return {type: stepType}
-            }
-            return el;
-        })]);
-
-        setStepType(stepType === CELL_TYPES.CROSS ? CELL_TYPES.CIRCLE : CELL_TYPES.CROSS);
-    };
 
     // TODO: use memoization
     // TODO: add game history component
@@ -42,6 +29,25 @@ const TicTacToe = () => {
 
     }, [field]);
 
+    const turnClick = (index: number): void => {
+        if (gameState !== GAME_STATES.PLAYING) return;
+
+        setField([...field.map((el, i) => {
+            if (i === index && el.type === CELL_TYPES.EMPTY) {
+                return {type: stepType}
+            }
+            return el;
+        })]);
+
+        setStepType(stepType === CELL_TYPES.CROSS ? CELL_TYPES.CIRCLE : CELL_TYPES.CROSS);
+    };
+
+    const refreshGame = () => {
+        setField(emptyField);
+        setGameState(GAME_STATES.PLAYING)
+    };
+
+
     return (
         <>
             {gameState === GAME_STATES.PLAYING
@@ -57,9 +63,8 @@ const TicTacToe = () => {
                         })}
                     </div>
                 :
-                    <GameResult gameState={gameState} />
+                    <GameResult gameState={gameState} refresh={refreshGame}/>
             }
-
         </>
     );
 };
