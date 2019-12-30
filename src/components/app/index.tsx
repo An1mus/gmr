@@ -5,8 +5,6 @@ import './app.css';
 
 import Routes from '../routes';
 
-import history from '../../common/';
-
 class App extends React.Component {
     render() {
         return (
