@@ -23,6 +23,7 @@ const WINING_PATTERNS: winningPatterns = {
     '.x..x..x.': GAME_STATES.CROSS_WON,
     '..x..x..x': GAME_STATES.CROSS_WON,
     'x...x...x': GAME_STATES.CROSS_WON,
+    '..x.x.x..': GAME_STATES.CROSS_WON,
     'ooo......': GAME_STATES.CIRCLES_WON,
     '...ooo...': GAME_STATES.CIRCLES_WON,
     '......ooo': GAME_STATES.CIRCLES_WON,
@@ -30,6 +31,7 @@ const WINING_PATTERNS: winningPatterns = {
     '.o..o..o.': GAME_STATES.CIRCLES_WON,
     '..o..o..o': GAME_STATES.CIRCLES_WON,
     'o...o...o': GAME_STATES.CIRCLES_WON,
+    '..o.o.o..': GAME_STATES.CIRCLES_WON,
 };
 
 export {CELL_TYPES, GAME_STATES, WINING_PATTERNS};
