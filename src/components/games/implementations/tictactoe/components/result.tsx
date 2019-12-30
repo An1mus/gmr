@@ -7,14 +7,15 @@ interface Props {
 }
 
 const GameResult = ({gameState}: Props) => {
-    const MESSAAGES = {
+    const MESSAGES = {
         [GAME_STATES.CIRCLES_WON]: 'Circles won this game, crosses suck.',
         [GAME_STATES.CROSS_WON]: 'Crosses won, deal with it.',
-        [GAME_STATES.FIELD_FULL]: 'Oh comon, can\'t any of you win?'
-    }
+        [GAME_STATES.FIELD_FULL]: 'Oh come on, can\'t any of you win?'
+    };
     return (
         <>
-            <p>MESSAAGES[gameState]</p>
+            <p>{MESSAGES[gameState]}</p>
+            <button>Play again</button>
         </>
     );
 };

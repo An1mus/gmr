@@ -4,7 +4,7 @@ import './styles/index.css';
 
 import { CELL_TYPES, GAME_STATES, WINING_PATTERNS } from './common';
 import Cell from './components/cell';
-import GameReult from './components/result';
+import GameResult from './components/result';
 
 const TicTacToe = () => {
     const emptyCell = {type: CELL_TYPES.EMPTY};
@@ -27,6 +27,7 @@ const TicTacToe = () => {
     };
 
     // TODO: use memoization
+    // TODO: add game history component
     useEffect(() => {
         const reducedState = field.reduce((p, el) => p + el.type, '');
 
@@ -56,7 +57,8 @@ const TicTacToe = () => {
                         })}
                     </div>
                 :
-                    <GameReult gameState={gameState} />
+                    <GameResult gameState={gameState} />
+            }
 
         </>
     );
