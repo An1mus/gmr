@@ -11,7 +11,11 @@ const GAME_STATES = {
     CROSS_WON: 'CROSS_WON',
 };
 
-const WINING_PATTERNS: any = {
+interface winningPatterns {
+    [index: string]: string,
+}
+
+const WINING_PATTERNS: winningPatterns = {
     'xxx......': GAME_STATES.CROSS_WON,
     '...xxx...': GAME_STATES.CROSS_WON,
     '......xxx': GAME_STATES.CROSS_WON,
