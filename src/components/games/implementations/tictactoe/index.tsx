@@ -5,10 +5,11 @@ import './styles/index.css';
 import { CELL_TYPES, GAME_STATES, WINING_PATTERNS } from './common';
 import Field from './components/field';
 import GameResult from './components/result';
+import GameHistory from './components/gameHistory';
 
 const TicTacToe = () => {
     const emptyField = new Array(9).fill({type: CELL_TYPES.EMPTY});
-    const [winHistory, setWinHistory] = useState([]);
+    const [winHistory, setWinHistory] = useState<string[] | []>([]);
     const [field, setField] = useState(emptyField);
     const [gameState, setGameState] = useState(GAME_STATES.PLAYING);
     const [stepType, setStepType] = useState(CELL_TYPES.CROSS);
@@ -24,15 +25,15 @@ const TicTacToe = () => {
         const gameWon = WINING_PATTERNS[circles] || WINING_PATTERNS[crosses];
 
         if (gameWon) {
-            // TODO: add game history component
-            // setWinHistory((prevState) => [...prevState, gameWon]);
+            setWinHistory((prevState) => [...prevState, gameWon]);
             setGameState(gameWon);
         }
         if (fieldFull) {
-            return setGameState(GAME_STATES.FIELD_FULL);
+            setWinHistory((prevState) => [...prevState, 'Even']);
+            setGameState(GAME_STATES.FIELD_FULL);
         }
 
-    }, [field, winHistory]);
+    }, [field]);
 
     const turnClick = (index: number): void => {
         if (gameState !== GAME_STATES.PLAYING) return;
@@ -52,10 +53,13 @@ const TicTacToe = () => {
     };
 
     return (
-        <>
-            <GameResult stepType={stepType} gameState={gameState} refresh={refreshGame}/>
-            <Field field={field} turnClick={turnClick}/>
-        </>
+        <div className="game-container">
+            <div>
+                <GameResult stepType={stepType} gameState={gameState} refresh={refreshGame}/>
+                <Field field={field} turnClick={turnClick}/>
+            </div>
+            <GameHistory winHistory={winHistory} />
+        </div>
     );
 };
 
