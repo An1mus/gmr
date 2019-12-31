@@ -1,9 +1,14 @@
-.field{
+.game-container {
+    display: flex;
+}
+
+.field {
     width: auto;
     max-width: 25rem;
     display: flex;
     flex-wrap: wrap;
 }
+
 .cell {
     width: 33%;
     padding-top: 14%;
