@@ -9,7 +9,6 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <h1>App is running</h1>
                 <HashRouter>
                     <Routes/>
                 </HashRouter>

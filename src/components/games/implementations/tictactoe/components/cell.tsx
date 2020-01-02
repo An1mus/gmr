@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 interface Props {
     index: number,
@@ -6,7 +6,7 @@ interface Props {
     click: ((index: number) => void),
 }
 
-const Cell = ({index, type, click }: Props) => {
+const Cell =({index, type, click }: Props) => {
     return (
         <>
             <button
