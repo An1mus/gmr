@@ -16,22 +16,24 @@ const TicTacToe = () => {
 
     // TODO: use memoization
     useEffect(() => {
-        const reducedState = field.reduce((p, el) => p + el.type, '');
+        const fieldString = field.reduce((p, el) => p + el.type, '');
+        const fieldFull = fieldString.indexOf(CELL_TYPES.EMPTY) < 0;
 
-        const circles: string = reducedState.split(CELL_TYPES.CROSS).join('.').split(CELL_TYPES.EMPTY).join('.');
-        const crosses: string = reducedState.split(CELL_TYPES.CIRCLE).join('.').split(CELL_TYPES.EMPTY).join('.');
-        const fieldFull = reducedState.indexOf(CELL_TYPES.EMPTY) < 0;
-
-        const gameWon = WINING_PATTERNS[circles] || WINING_PATTERNS[crosses];
+        const gameWon = WINING_PATTERNS.find(pattern => {
+            const regExp = new RegExp(pattern.regExp);
+            if(regExp.test(fieldString)) return pattern;
+        });
 
         if (gameWon) {
-            setWinHistory((prevState) => [...prevState, gameWon]);
-            setGameState(gameWon);
+            setWinHistory((prevState) => [...prevState, gameWon.winType]);
+            setGameState(gameWon.winType);
         }
-        if (fieldFull) {
+        if (fieldFull && !gameWon) {
             setWinHistory((prevState) => [...prevState, 'Even']);
             setGameState(GAME_STATES.FIELD_FULL);
         }
+
+        return /* componentWillUnmount */;
 
     }, [field]);
 
