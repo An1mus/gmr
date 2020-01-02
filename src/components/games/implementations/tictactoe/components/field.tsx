@@ -1,19 +1,16 @@
 import React from 'react';
-import Cell from './cell';
+import MemoizedCell from './cell';
 
 interface Props {
     field: any[],
     turnClick: (index: number) => void
 }
 
-/**
- * TODO: Add Field type and Cell type
- */
 const Field = ({field, turnClick}: Props) => {
     return (
         <div className={'field'}>
             {field.map((cell: any, i) => {
-                return <Cell
+                return <MemoizedCell
                     key={i}
                     index={i}
                     click={(index) => turnClick(index)}

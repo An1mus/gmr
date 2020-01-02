@@ -11,27 +11,28 @@ const GAME_STATES = {
     CROSS_WON: 'CROSS_WON',
 };
 
-interface winningPatterns {
-    [index: string]: string,
+interface IWinPattern {
+    regExp: string,
+    winType: string
 }
 
-const WINING_PATTERNS: winningPatterns = {
-    'xxx......': GAME_STATES.CROSS_WON,
-    '...xxx...': GAME_STATES.CROSS_WON,
-    '......xxx': GAME_STATES.CROSS_WON,
-    'x..x..x..': GAME_STATES.CROSS_WON,
-    '.x..x..x.': GAME_STATES.CROSS_WON,
-    '..x..x..x': GAME_STATES.CROSS_WON,
-    'x...x...x': GAME_STATES.CROSS_WON,
-    '..x.x.x..': GAME_STATES.CROSS_WON,
-    'ooo......': GAME_STATES.CIRCLES_WON,
-    '...ooo...': GAME_STATES.CIRCLES_WON,
-    '......ooo': GAME_STATES.CIRCLES_WON,
-    'o..o..o..': GAME_STATES.CIRCLES_WON,
-    '.o..o..o.': GAME_STATES.CIRCLES_WON,
-    '..o..o..o': GAME_STATES.CIRCLES_WON,
-    'o...o...o': GAME_STATES.CIRCLES_WON,
-    '..o.o.o..': GAME_STATES.CIRCLES_WON,
-};
+const WINING_PATTERNS: Array<IWinPattern> = [
+    {regExp: 'xxx......', winType: GAME_STATES.CROSS_WON},
+    {regExp: '...xxx...', winType: GAME_STATES.CROSS_WON},
+    {regExp: '......xxx', winType: GAME_STATES.CROSS_WON},
+    {regExp: 'x..x..x..', winType: GAME_STATES.CROSS_WON},
+    {regExp: '.x..x..x.', winType: GAME_STATES.CROSS_WON},
+    {regExp: '..x..x..x', winType: GAME_STATES.CROSS_WON},
+    {regExp: 'x...x...x', winType: GAME_STATES.CROSS_WON},
+    {regExp: '..x.x.x..', winType: GAME_STATES.CROSS_WON},
+    {regExp: 'ooo......', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: '...ooo...', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: '......ooo', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: 'o..o..o..', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: '.o..o..o.', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: '..o..o..o', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: 'o...o...o', winType: GAME_STATES.CIRCLES_WON},
+    {regExp: '..o.o.o..', winType: GAME_STATES.CIRCLES_WON},
+];
 
 export {CELL_TYPES, GAME_STATES, WINING_PATTERNS};
