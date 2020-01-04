@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HashRouter } from 'react-router-dom';
 
 import './app.css';
