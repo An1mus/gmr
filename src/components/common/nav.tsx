@@ -2,17 +2,17 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 
 const Nav = () => {
-    const links = [
+    const mainLinks = [
         {
             id: 0,
-            url: '/ttt',
+            url: '/games',
             icon: '',
-            title: 'Tic Tac Toe'
+            title: 'Here are some games to play'
         }
     ];
 	return (
 		<>
-			{links.map(link => (<NavLink key={link.id} to={link.url}>{link.title}</NavLink>))}
+			{mainLinks.map(link => (<NavLink key={link.id} to={link.url}>{link.title}</NavLink>))}
 		</>
 	);
 };
