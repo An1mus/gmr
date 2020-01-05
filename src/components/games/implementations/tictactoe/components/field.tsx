@@ -1,5 +1,5 @@
 import React from 'react';
-import MemoizedCell from './cell';
+import Cell from './cell';
 
 interface Props {
     field: any[],
@@ -10,7 +10,7 @@ const Field = ({field, turnClick}: Props) => {
     return (
         <div className={'field'}>
             {field.map((cell: any, i) => {
-                return <MemoizedCell
+                return <Cell
                     key={i}
                     index={i}
                     click={(index) => turnClick(index)}
