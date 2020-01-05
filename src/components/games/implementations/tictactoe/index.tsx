@@ -14,15 +14,11 @@ const TicTacToe = () => {
     const [gameState, setGameState] = useState(GAME_STATES.PLAYING);
     const [stepType, setStepType] = useState(CELL_TYPES.CROSS);
 
-    // TODO: use memoization
     useEffect(() => {
         const fieldString = field.reduce((p, el) => p + el.type, '');
         const fieldFull = fieldString.indexOf(CELL_TYPES.EMPTY) < 0;
 
-        const gameWon = WINING_PATTERNS.find(pattern => {
-            const regExp = new RegExp(pattern.regExp);
-            if(regExp.test(fieldString)) return pattern;
-        });
+        const gameWon = WINING_PATTERNS.find(pattern => (new RegExp(pattern.regExp)).test(fieldString));
 
         if (gameWon) {
             setWinHistory((prevState) => [...prevState, gameWon.winType]);
@@ -33,7 +29,7 @@ const TicTacToe = () => {
             setGameState(GAME_STATES.FIELD_FULL);
         }
 
-        return /* componentWillUnmount */;
+        return /*Component will unmount*/;
 
     }, [field]);
 
