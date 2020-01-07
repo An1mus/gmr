@@ -1,4 +1,7 @@
-.app-container {
+.app {
+    display: flex;
+}
+.app-content-container {
     display: flex;
     flex-direction: column;
 }
