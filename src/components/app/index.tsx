@@ -8,15 +8,15 @@ import { Nav, Header } from '../common';
 
 const App = () => {
     return (
-        <>
+        <div className={'app'}>
             <HashRouter>
                 <Nav/>
-                <div className="app-container">
+                <div className="app-content-container">
                     <Header />
                     <Routes/>
                 </div>
             </HashRouter>
-        </>
+        </div>
     );
 };
 
