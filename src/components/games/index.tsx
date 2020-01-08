@@ -1,20 +1,20 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
+import { NavLink, Route, Router, Switch } from 'react-router-dom';
+import history from '../../common';
+import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 
 const Games = () => {
-    const links = [
-        {
-            id: 0,
-            url: '/tic-tac-toe',
-            title: 'Tic Tac Toe'
-        }
-    ];
     return (
         <>
-            <h2>Games available:</h2>
-
-            {links.map(link => (<Link key={link.id} to={link.url}>{link.title}</Link>))}
+            <h1>Chose where to play?</h1>
+            <Router history={history}>
+                <nav>
+                    {GAME_LINKS.map(link => (<NavLink key={link.id} to={`/games${link.path}`}>{link.title}</NavLink>))}
+                </nav>
+                <Switch>
+                    {GAME_COMPONENTS.map(game => (<Route key={game.id} path={`/games${game.path}`} component={game.component}/>))}
+                </Switch>
+            </Router>
         </>
     );
 };
