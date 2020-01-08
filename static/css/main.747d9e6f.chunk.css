@@ -1,0 +1,2 @@
+html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}:root{--main-font-color:#444950;--main-highlight-font-color:#fff;--main-background-color:#fff;--main-background-highlight-color:#09d5b7}.app{color:#444950;color:var(--main-font-color);display:flex;font-family:Arial,Roboto,sans-serif}.app-content-container{display:flex;flex-direction:column}.field,.game-container{display:flex}.field{width:auto;max-width:25rem;flex-wrap:wrap}.cell{width:33%;padding-top:14%;padding-bottom:14%}
+/*# sourceMappingURL=main.747d9e6f.chunk.css.map */
