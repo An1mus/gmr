@@ -1,5 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+:root{
+    --main-font-color: #444950;
+    --main-highlight-font-color: #ffffff;
+
+    --main-background-color: #ffffff;
+    --main-background-highlight-color: #09d5b7;
+}
+
 .app {
+    color: var(--main-font-color);
     display: flex;
+    font-family: Arial, Roboto, sans-serif;
 }
 .app-content-container {
     display: flex;
