@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
+import {IMainNavigationItem} from '../../../../common/types';
 
 const NavIconContainer = styled.div`
     cursor: pointer;  
@@ -41,15 +42,8 @@ const NavIconContainer = styled.div`
     }
 `;
 
-interface NavigationLink {
-    id: number,
-    url: string,
-    icon: React.FunctionComponent,
-    title: string,
-}
-
 interface Props {
-    link: NavigationLink;
+    link: IMainNavigationItem;
 }
 
 const MainNavLink = ({link}: Props) => (
