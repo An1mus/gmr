@@ -1,4 +1,3 @@
-import React from 'react';
 import {ReactComponent as GamesIcon} from '../../../assets/nav/games.svg';
 import {ReactComponent as AboutIcon} from '../../../assets/nav/about.svg';
 import {ReactComponent as HomeIcon} from '../../../assets/nav/home.svg';
