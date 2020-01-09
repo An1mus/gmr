@@ -9,7 +9,10 @@ html {
 
 :root{
     --main-font-color: #444950;
-    --main-highlight-font-color: #ffffff;
+    --main-highlight-font-color: #09d5b7;
+    --secondary-highlight-font-color: #ffffff;
+
+    --main-used-font-color: #677cd5;
 
     --main-background-color: #ffffff;
     --main-background-highlight-color: #09d5b7;
@@ -19,5 +22,13 @@ html {
     color: var(--main-font-color);
     display: flex;
     font-family: Arial, Roboto, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-highlight-font-color);
+}
+a.visited {
+    color: var(--main-used-font-color);
 }
 

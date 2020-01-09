@@ -23,7 +23,7 @@ const NavIconContainer = styled.div`
         width: 0%;
         
         svg {
-            fill: var(--main-highlight-font-color);
+            fill: var(--secondary-highlight-font-color);
         }
     }
     

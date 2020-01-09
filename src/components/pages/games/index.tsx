@@ -6,7 +6,6 @@ import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 const Games = () => {
     return (
         <>
-            <h1>Chose where to play?</h1>
             <Router history={history}>
                 <nav>
                     {GAME_LINKS.map(link => (<NavLink key={link.id} to={`/games${link.path}`}>{link.title}</NavLink>))}
