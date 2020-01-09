@@ -10,13 +10,13 @@ const Home = () => (
         <p>
             <b>
                 GMR is a collection of games made with JS, which is under constant&nbsp;
-                <a target='_blank' href='https://github.com/An1mus/gmr/commits/master'>development</a>
+                <a rel="noopener noreferrer" target='_blank' href='https://github.com/An1mus/gmr/commits/master'>development</a>
             </b>
         </p>
         <p>
-            This app is meant to provide <a target='_blank' href="https://en.wikipedia.org/wiki/Fun">fun</a> and that is all.<br/>
+            This app is meant to provide <a rel="noopener noreferrer" target='_blank' href="https://en.wikipedia.org/wiki/Fun">fun</a> and that is all.<br/>
             Free for all kinds of usage.<br/>
-            Any <a target='_blank' href="https://github.com/An1mus/gmr">PRs</a> are welcome.
+            Any <a rel="noopener noreferrer" target='_blank' href="https://github.com/An1mus/gmr">PRs</a> are welcome.
         </p>
     </HomeContainer>
 );
