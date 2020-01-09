@@ -3,12 +3,13 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Games from '../games';
 import NotFound from '../notfound';
+import Home from '../home';
 
 const Routes = () => {
     return (
         <>
             <Switch>
-                <Redirect exact path={'/'} to={'/games'}/>
+                <Route exact path={'/'} component={Home}/>
                 <Route exact path={'/games'} component={Games}/>
                 <Route component={NotFound} />
             </Switch>
