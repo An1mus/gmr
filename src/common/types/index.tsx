@@ -1,3 +1,3 @@
-import IMainNavigationItem from './nav-types/main-nav-item.type';
+import MainNavigationItemType from './nav-types/main-nav-item.type';
 
-export {IMainNavigationItem};
+export type IMainNavigationItem = MainNavigationItemType;

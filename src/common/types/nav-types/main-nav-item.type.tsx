@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface IMainNavigationItem {
+export default interface IMainNavigationItem {
     id: number,
     url: string,
+    exact: boolean,
     icon: React.FunctionComponent,
     title: string,
 }
 
-export default IMainNavigationItem;
