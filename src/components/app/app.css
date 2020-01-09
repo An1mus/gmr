@@ -20,9 +20,4 @@ html {
     display: flex;
     font-family: Arial, Roboto, sans-serif;
 }
-.app-content-container {
-    display: flex;
-    flex-direction: column;
-}
-
 

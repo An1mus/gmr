@@ -1,9 +1,20 @@
 import React from "react";
+import styled from 'styled-components';
+
+const HeaderContainer = styled.header`
+    padding: 1rem 2rem;
+    
+    h1 {
+        margin: 0;
+    }
+`;
 
 const Header = () => {
     return (
         <>
-            <h1>Welcome to GMR</h1>
+            <HeaderContainer>
+                <h1>Welcome to GMR</h1>
+            </HeaderContainer>
         </>
     );
 };

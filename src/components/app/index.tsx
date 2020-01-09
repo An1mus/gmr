@@ -11,8 +11,8 @@ const App = () => {
         <div className={'app'}>
             <HashRouter>
                 <Nav/>
-                <div className="app-content-container">
-                    <Header />
+                <div>
+                    <Header/>
                     <Routes/>
                 </div>
             </HashRouter>
