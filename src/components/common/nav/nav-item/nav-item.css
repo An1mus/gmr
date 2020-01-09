@@ -1,0 +1,4 @@
+a.active .hover-icon{
+    transition: width .4s;
+    width: 100%;
+}
