@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import {IMainNavigationItem} from '../../../../common/types';
+import './nav-item.css';
 
 const NavIconContainer = styled.div`
     cursor: pointer;  
@@ -18,7 +19,7 @@ const NavIconContainer = styled.div`
         overflow: hidden;
         position: absolute;
         top: 0;
-        transition: width .3s;
+        transition: width .4s;
         width: 0%;
         
         svg {
@@ -26,9 +27,9 @@ const NavIconContainer = styled.div`
         }
     }
     
-    &:hover {
+    &:hover {   
         .hover-icon{
-            transition: width .3s;
+            transition: width .4s;
             width: 100%;
         }
     }
@@ -47,7 +48,7 @@ interface Props {
 }
 
 const MainNavLink = ({link}: Props) => (
-    <NavLink to={link.url}>
+    <NavLink exact={link.exact} to={link.url} activeClassName={'active'}>
         <NavIconContainer title={link.title}>
             <link.icon />
             <NavIconContainer className="hover-icon">

@@ -11,7 +11,7 @@ const MainNav = styled.nav`
 const Nav = () => {
     return (
         <MainNav>
-            {NavLinks.map(link => (<MainNavLink  key={link.id} link={link} />))}
+            {NavLinks.map(link => (<MainNavLink key={link.id} link={link} />))}
         </MainNav>
     );
 };
