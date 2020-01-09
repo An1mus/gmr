@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Route, Router, Switch } from 'react-router-dom';
-import history from '../../common';
+import history from '../../../common';
 import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 
 const Games = () => {

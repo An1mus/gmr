@@ -1,16 +1,18 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
-import Games from '../games';
+import Home from '../pages/home';
+import Games from '../pages/games';
+import About from '../pages/about';
 import NotFound from '../notfound';
-import Home from '../home';
 
 const Routes = () => {
     return (
         <>
             <Switch>
                 <Route exact path={'/'} component={Home}/>
-                <Route exact path={'/games'} component={Games}/>
+                <Route path={'/games'} component={Games}/>
+                <Route path={'/about'} component={About}/>
                 <Route component={NotFound} />
             </Switch>
         </>
