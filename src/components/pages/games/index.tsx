@@ -5,6 +5,7 @@ import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 const Games = () => {
     return (
         <>
+            <h2>Here is some stuff to play</h2>
             <HashRouter>
                 <nav>
                     {GAME_LINKS.map(link => (<NavLink key={link.id} to={`/games${link.path}`}>{link.title}</NavLink>))}

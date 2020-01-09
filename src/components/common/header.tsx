@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <>
             <HeaderContainer>
-                <h1>Welcome to GMR</h1>
+                <h1>GMR</h1>
             </HeaderContainer>
         </>
     );
