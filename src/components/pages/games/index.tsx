@@ -1,19 +1,18 @@
 import React from 'react';
-import { NavLink, Route, Router, Switch } from 'react-router-dom';
-import history from '../../../common';
+import { HashRouter, NavLink, Route, Switch } from 'react-router-dom';
 import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 
 const Games = () => {
     return (
         <>
-            <Router history={history}>
+            <HashRouter>
                 <nav>
                     {GAME_LINKS.map(link => (<NavLink key={link.id} to={`/games${link.path}`}>{link.title}</NavLink>))}
                 </nav>
                 <Switch>
                     {GAME_COMPONENTS.map(game => (<Route key={game.id} path={`/games${game.path}`} component={game.component}/>))}
                 </Switch>
-            </Router>
+            </HashRouter>
         </>
     );
 };
