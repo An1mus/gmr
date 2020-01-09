@@ -7,6 +7,9 @@ const HomeContainer = styled.section`
 
 const Home = () => (
     <HomeContainer>
+        <h2>
+            What is this you may ask?
+        </h2>
         <p>
             <b>
                 GMR is a collection of games made with JS, which is under constant&nbsp;
