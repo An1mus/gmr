@@ -16,6 +16,8 @@ html {
 
     --main-background-color: #ffffff;
     --main-background-highlight-color: #09d5b7;
+
+    --main-gradient-color: linear-gradient(#6ee6cc, #6ec8e5);
 }
 
 .app {
