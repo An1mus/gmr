@@ -13,14 +13,17 @@ const GameLink = styled.div`
     width: 2.5rem;
 
     svg {
+        border: 0.08rem solid var(--secondary-highlight-font-color);
+        padding: 0.3rem;
         position: relative;
-        transition: fill .3s;
+        transition: all .3s;
         fill: var(--main-font-color);
     }
     .active,
     &:hover{
         svg {
-            transition: fill .3s;
+            border: 0.08rem solid var(--main-highlight-font-color);
+            transition: all .3s;
             fill: var(--main-highlight-font-color);
         }
     }
@@ -29,7 +32,6 @@ const GameLink = styled.div`
 const Games = () => {
     return (
         <>
-            <h2>Here is some stuff to play</h2>
             <HashRouter>
                 <GameNav>
                     {GAME_LINKS.map(link => (
