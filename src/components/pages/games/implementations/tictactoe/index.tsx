@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import './styles/index.css';
-
 import { CELL_TYPES, GAME_STATES, WINING_PATTERNS } from './common';
 import Field from './components/field';
 import GameResult from './components/result';
 import GameHistory from './components/gameHistory';
+import styled from 'styled-components';
+
+const TicTacToeContainer = styled.div`
+    display: flex;
+`;
 
 const TicTacToe = () => {
     const emptyField = new Array(9).fill({type: CELL_TYPES.EMPTY});
@@ -26,7 +29,7 @@ const TicTacToe = () => {
         }
 
         if (fieldFull && !gameWon) {
-            setWinHistory((prevState) => [...prevState, 'Even']);
+            setWinHistory((prevState) => [...prevState, GAME_STATES.FIELD_FULL]);
             setGameState(GAME_STATES.FIELD_FULL);
         }
 
@@ -52,13 +55,13 @@ const TicTacToe = () => {
     };
 
     return (
-        <div className="game-container">
+        <TicTacToeContainer>
             <div>
                 <GameResult stepType={stepType} gameState={gameState} refresh={refreshGame}/>
                 <Field field={field} turnClick={turnClick}/>
             </div>
             <GameHistory winHistory={winHistory} />
-        </div>
+        </TicTacToeContainer>
     );
 };
 
