@@ -6,6 +6,7 @@ import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 const GameNav = styled.nav`
     display: flex;
     justify-content: start;
+    margin-bottom: 2rem;
 `;
 
 const GameLink = styled.div`
