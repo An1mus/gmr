@@ -29,7 +29,7 @@ const TicTacToe = () => {
         }
 
         if (fieldFull && !gameWon) {
-            setWinHistory((prevState) => [...prevState, 'Even']);
+            setWinHistory((prevState) => [...prevState, GAME_STATES.FIELD_FULL]);
             setGameState(GAME_STATES.FIELD_FULL);
         }
 

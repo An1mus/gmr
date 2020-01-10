@@ -16,18 +16,20 @@ const TurnContainer = styled.div`
 `;
 
 const Turn = ({stepType, message}: any) => {
+    console.log(stepType);
     const TURN_TYPE_ICONS = {
         [CELL_TYPES.CIRCLE]: () => (<Circle />),
         [GAME_STATES.CIRCLES_WON]: () => (<Circle />),
         [CELL_TYPES.CROSS]: () => (<Cross />),
         [GAME_STATES.CROSS_WON]: () => (<Cross />),
+        [GAME_STATES.FIELD_FULL]:  () => (<p>It was even...</p>)
     };
 
-    const getIcon = (stepType: any) => TURN_TYPE_ICONS[stepType];
+    const iconType = TURN_TYPE_ICONS[stepType]();
 
     return (
         <TurnContainer>
-            {getIcon(stepType)()}
+            {iconType}
             <p>{message}</p>
         </TurnContainer>
     );
