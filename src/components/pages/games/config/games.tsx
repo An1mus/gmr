@@ -1,4 +1,4 @@
-import {ReactComponent as TicTacToeIcon} from '../../../../assets/games/ttt.svg';
+import {ReactComponent as TicTacToeIcon} from '../../../../assets/game-nav-icons/ttt.svg';
 import TicTacToe from '../implementations/tictactoe';
 
 const GAME_LINKS = [
