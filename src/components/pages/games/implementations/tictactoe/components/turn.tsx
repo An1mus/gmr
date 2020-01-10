@@ -7,30 +7,37 @@ import React from 'react';
 const TurnContainer = styled.div`
     align-items: center;
     display: flex;
+    margin-bottom: 0.5rem;
 
     svg {
         fill: var(--main-highlight-font-color);
-        margin-right: 1rem;
+        margin-right: 0.5rem;
         width: 1.5rem;
+    }
+    
+    p {
+        margin: 0;
     }
 `;
 
+
+//TODO make this component solid on review
 const Turn = ({stepType, message}: any) => {
-    console.log(stepType);
     const TURN_TYPE_ICONS = {
         [CELL_TYPES.CIRCLE]: () => (<Circle />),
         [GAME_STATES.CIRCLES_WON]: () => (<Circle />),
         [CELL_TYPES.CROSS]: () => (<Cross />),
         [GAME_STATES.CROSS_WON]: () => (<Cross />),
-        [GAME_STATES.FIELD_FULL]:  () => (<p>It was even...</p>)
+        [GAME_STATES.FIELD_FULL]:  () => (<p>No one </p>)
     };
 
     const iconType = TURN_TYPE_ICONS[stepType]();
 
     return (
         <TurnContainer>
-            {iconType}
-            <p>{message}</p>
+            { stepType !== GAME_STATES.FIELD_FULL
+                ? <>{iconType}<p>{message}</p></>
+                : <p> The game was even </p> }
         </TurnContainer>
     );
 };

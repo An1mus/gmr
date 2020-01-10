@@ -1,9 +1,5 @@
 import React from 'react';
 
-import { CELL_TYPES, GAME_STATES } from '../common';
-import {ReactComponent as Circle} from '../../../../../../assets/in-game-icons/tic-tac-toe/circle.svg';
-import {ReactComponent as Cross} from '../../../../../../assets/in-game-icons/tic-tac-toe/cross.svg';
-
 import styled from 'styled-components';
 import Turn from './turn';
 

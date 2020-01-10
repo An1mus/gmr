@@ -47,7 +47,7 @@ const Cell =({index, type, click }: Props) => {
                 onClick={() => click(index)}
                 className={'cell'}
             >
-                {type === CELL_TYPES.CIRCLE? <Circle /> : type === CELL_TYPES.CROSS ? <Cross /> : ''}
+                {type === CELL_TYPES.CIRCLE ? <Circle /> : type === CELL_TYPES.CROSS ? <Cross /> : ''}
             </IconContainer>
         </>
     );
