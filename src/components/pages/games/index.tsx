@@ -6,7 +6,7 @@ import { GAME_LINKS, GAME_COMPONENTS } from './config/games';
 const GameNav = styled.nav`
     display: flex;
     justify-content: start;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 `;
 
 const GameLink = styled.div`
@@ -35,8 +35,8 @@ const Games = () => {
             <HashRouter>
                 <GameNav>
                     {GAME_LINKS.map(link => (
-                        <GameLink>
-                            <NavLink key={link.id} to={`/games${link.path}`} activeClassName={'active'}>
+                        <GameLink key={link.id}>
+                            <NavLink to={`/games${link.path}`} activeClassName={'active'}>
                                     <link.icon/>
                             </NavLink>
                         </GameLink>

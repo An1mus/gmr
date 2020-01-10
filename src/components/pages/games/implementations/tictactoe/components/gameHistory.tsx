@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Turn from './turn';
+
 interface Props {
     winHistory: string[]
 }
@@ -11,8 +13,8 @@ const GameHistory = ({winHistory} : Props) => {
                 winHistory.length > 0
                     ?
                         <div>
-                            <h3>Win History:</h3>
-                            {winHistory.map((el, i) => (<p key={i}>{el}</p>))}
+                            <h3>History:</h3>
+                            {winHistory.map((el, i) => (<Turn stepType={el} key={i} message={'Won'}/>))}
                         </div>
                     :
                         <h3>No one won yet!</h3>

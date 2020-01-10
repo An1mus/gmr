@@ -13,9 +13,9 @@ interface Props {
 }
 
 const IconContainer = styled.div`
-    padding: 0;
-    height: 5rem;
-    width: 5rem;
+    padding: 1rem;
+    height: 8rem;
+    width: 8rem;
 
     &:nth-child(1),
     &:nth-child(2),
@@ -23,7 +23,7 @@ const IconContainer = styled.div`
     &:nth-child(5),
     &:nth-child(7),
     &:nth-child(8){
-        border-right: 0.1rem solid var(--main-highlight-font-color);
+        border-right: 0.3rem solid var(--main-highlight-font-color);
     }
     
     &:nth-child(1),
@@ -32,7 +32,11 @@ const IconContainer = styled.div`
     &:nth-child(4),
     &:nth-child(5),
     &:nth-child(6){
-        border-bottom: 0.1rem solid var(--main-highlight-font-color);
+        border-bottom: 0.3rem solid var(--main-highlight-font-color);
+    }
+    
+    svg {
+        fill: var(--main-highlight-font-color);
     }
 `;
 
@@ -43,7 +47,7 @@ const Cell =({index, type, click }: Props) => {
                 onClick={() => click(index)}
                 className={'cell'}
             >
-                {type === CELL_TYPES.CIRCLE ? <Circle /> : type === CELL_TYPES.CROSS ? <Cross /> : ''}
+                {type === CELL_TYPES.CIRCLE? <Circle /> : type === CELL_TYPES.CROSS ? <Cross /> : ''}
             </IconContainer>
         </>
     );

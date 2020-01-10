@@ -1,6 +1,33 @@
 import React from 'react';
 
-import { GAME_STATES } from '../common';
+import { CELL_TYPES, GAME_STATES } from '../common';
+import {ReactComponent as Circle} from '../../../../../../assets/in-game-icons/tic-tac-toe/circle.svg';
+import {ReactComponent as Cross} from '../../../../../../assets/in-game-icons/tic-tac-toe/cross.svg';
+
+import styled from 'styled-components';
+import Turn from './turn';
+
+const GameResultContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+`;
+
+const PlayAgainButton = styled.button`
+    border: 0.1rem solid var(--main-highlight-font-color); 
+    background-color: var(--secondary-highlight-font-color);
+    color: var(--main-highlight-font-color); 
+    cursor: pointer;
+    outline: none;
+    transition: all .3s;    
+    padding: 0.8rem 1.3rem;
+    margin-left: 1rem;
+    
+    &:hover{
+        background-color: var(--main-highlight-font-color); 
+        color: var(--secondary-highlight-font-color); 
+    }
+`;
 
 interface Props {
     gameState: string,
@@ -8,18 +35,12 @@ interface Props {
     stepType: string
 }
 
-const GameResult = ({gameState, refresh, stepType}: Props) => {
-    const MESSAGES = {
-        [GAME_STATES.PLAYING]: `${stepType === 'x' ? 'CROSSES' : 'CIRCLES'} turn now`,
-        [GAME_STATES.CIRCLES_WON]: 'Circles won this game, crosses suck.',
-        [GAME_STATES.CROSS_WON]: 'Crosses won, deal with it.',
-        [GAME_STATES.FIELD_FULL]: 'Oh come on, can\'t any of you win?'
-    };
+const GameResult = ({refresh, stepType}: Props) => {
     return (
-        <>
-            <p>{MESSAGES[gameState]}</p>
-            <button onClick={() => refresh()}>Play again</button>
-        </>
+        <GameResultContainer>
+            <Turn stepType={stepType} message={'is next'}/>
+            <PlayAgainButton onClick={() => refresh()}>Play again</PlayAgainButton>
+        </GameResultContainer>
     );
 };
 

@@ -10,7 +10,7 @@ interface Props {
 const FieldContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 15rem;
+    width: 24rem;
 `;
 
 const Field = ({field, turnClick}: Props) => {
