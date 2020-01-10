@@ -1,28 +1,31 @@
 {
   "files": {
-    "main.css": "/gmr/static/css/main.8d787a5f.chunk.css",
-    "main.js": "/gmr/static/js/main.f5e0f371.chunk.js",
-    "main.js.map": "/gmr/static/js/main.f5e0f371.chunk.js.map",
+    "main.css": "/gmr/static/css/main.2a884dc0.chunk.css",
+    "main.js": "/gmr/static/js/main.1595e268.chunk.js",
+    "main.js.map": "/gmr/static/js/main.1595e268.chunk.js.map",
     "runtime-main.js": "/gmr/static/js/runtime-main.bb376414.js",
     "runtime-main.js.map": "/gmr/static/js/runtime-main.bb376414.js.map",
     "static/css/2.764ccc25.chunk.css": "/gmr/static/css/2.764ccc25.chunk.css",
-    "static/js/2.1f984af1.chunk.js": "/gmr/static/js/2.1f984af1.chunk.js",
-    "static/js/2.1f984af1.chunk.js.map": "/gmr/static/js/2.1f984af1.chunk.js.map",
+    "static/js/2.e5a9d475.chunk.js": "/gmr/static/js/2.e5a9d475.chunk.js",
+    "static/js/2.e5a9d475.chunk.js.map": "/gmr/static/js/2.e5a9d475.chunk.js.map",
     "index.html": "/gmr/index.html",
-    "precache-manifest.552d1604b195ce440f83c17decb2023a.js": "/gmr/precache-manifest.552d1604b195ce440f83c17decb2023a.js",
+    "precache-manifest.c08215e59766756fac6ba60f48fcc9e3.js": "/gmr/precache-manifest.c08215e59766756fac6ba60f48fcc9e3.js",
     "service-worker.js": "/gmr/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/gmr/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.8d787a5f.chunk.css.map": "/gmr/static/css/main.8d787a5f.chunk.css.map",
-    "static/js/2.1f984af1.chunk.js.LICENSE": "/gmr/static/js/2.1f984af1.chunk.js.LICENSE",
+    "static/css/main.2a884dc0.chunk.css.map": "/gmr/static/css/main.2a884dc0.chunk.css.map",
+    "static/js/2.e5a9d475.chunk.js.LICENSE": "/gmr/static/js/2.e5a9d475.chunk.js.LICENSE",
     "static/media/about.2c33f15b.svg": "/gmr/static/media/about.2c33f15b.svg",
+    "static/media/circle.7d7bb70c.svg": "/gmr/static/media/circle.7d7bb70c.svg",
+    "static/media/cross.0a4ad056.svg": "/gmr/static/media/cross.0a4ad056.svg",
     "static/media/games.d422533a.svg": "/gmr/static/media/games.d422533a.svg",
-    "static/media/home.0f0b6a3e.svg": "/gmr/static/media/home.0f0b6a3e.svg"
+    "static/media/home.0f0b6a3e.svg": "/gmr/static/media/home.0f0b6a3e.svg",
+    "static/media/ttt.cfa86765.svg": "/gmr/static/media/ttt.cfa86765.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bb376414.js",
     "static/css/2.764ccc25.chunk.css",
-    "static/js/2.1f984af1.chunk.js",
-    "static/css/main.8d787a5f.chunk.css",
-    "static/js/main.f5e0f371.chunk.js"
+    "static/js/2.e5a9d475.chunk.js",
+    "static/css/main.2a884dc0.chunk.css",
+    "static/js/main.1595e268.chunk.js"
   ]
 }
