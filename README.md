@@ -1,4 +1,5 @@
-#GMR  🚀<br/>
+GMR  🚀<br/>
+-
 A collection of JS-based games/apps created to have fun<br/> 
 [Main deploy](https://an1mus.github.io/gmr/)<br/>
 `A-version state`
