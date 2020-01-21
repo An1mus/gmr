@@ -7,7 +7,7 @@ A collection of JS-based games/apps created to have fun<br/>
 ## Built With
 * [React](https://github.com/facebook/react/) - A framework to rule them all 💍
 * [TypeScript](https://www.typescriptlang.org/) - Syntactical superset of JS, because it makes life easier
-* [StyledComponents](https://github.com/styled-components) - Easy to sue CSS in JS 
+* [StyledComponents](https://github.com/styled-components) - Easy to use CSS in JS 
 
 ## Run it if you want
 1. Clone the repository. 
