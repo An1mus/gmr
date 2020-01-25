@@ -10,7 +10,9 @@ const GameNav = styled.nav`
 `;
 
 const GameLink = styled.div`
-    width: 2.5rem;
+    margin-right: 1rem;
+    height: 2.8rem;
+    width: 2.8rem;
 
     svg {
         border: 0.08rem solid var(--secondary-highlight-font-color);
@@ -18,6 +20,8 @@ const GameLink = styled.div`
         position: relative;
         transition: all .3s;
         fill: var(--main-font-color);
+        width: 100%;
+        height: 100%;
     }
     .active,
     &:hover{
