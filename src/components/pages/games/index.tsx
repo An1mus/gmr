@@ -10,7 +10,7 @@ const GameNav = styled.nav`
 `;
 
 const GameLink = styled.div`
-    margin-right: 1rem;
+    margin-right: .5rem;
     height: 2.8rem;
     width: 2.8rem;
 
