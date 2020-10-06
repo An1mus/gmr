@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/home';
 import Games from '../pages/games';
 import About from '../pages/about';
+import Visualisations from '../pages/visualisations';
 import NotFound from '../notfound';
 
 const AppContentContainer = styled.div`
@@ -17,6 +18,7 @@ const Routes = () => {
             <Switch>
                 <Route exact path={'/'} component={Home}/>
                 <Route path={'/games'} component={Games}/>
+                <Route path={'/visualisations'} component={Visualisations}/>
                 <Route path={'/about'} component={About}/>
                 <Route component={NotFound} />
             </Switch>
